@@ -9,7 +9,7 @@ app.use(express.bodyParser());
 
 // Defining routes
 app.get('/users', users.findAll);
-app.get('/users/devices', users.findAllDevices);
+app.post('/users', users.addUser);
 
 // Launch app
 app.listen(3000);

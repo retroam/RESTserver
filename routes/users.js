@@ -42,24 +42,26 @@ res.send(result[0]);
 }
 
 var populateDB = function() {
- 
+console.log('Creating database'); 
 var users = [
 {   name: 'Robert Amanfu',
-    device: {'id':  '9740b735-d545-4bab-bcdc-ba00a1e76d3a',
-   'label':  'Motion Sensor',
-   'name':  'Motion Sensor',
-   'state': { 'date':  '2015-02-05T01:41:59.865Z',
-    'name':  'motion',
-    'type': None,
-    'unit': None,
-    'unixTime': 1423100519865,
-    'value':  'inactive'}}}
+    device: {id:  '9740b735-d545-4bab-bcdc-ba00a1e76d3a',
+   label:  'Motion Sensor',
+   name:  'Motion Sensor',
+   state: { 'date':  '2015-02-05T01:41:59.865Z',
+    name:  'motion',
+    type: 'None',
+    unit:'None',
+    unixTime: 1423100519865,
+    value:  'inactive'}}}
 ];
  
 db.collection('users', function(err, collection) {
+console.log('Inserting into database');
 collection.insert(users, {safe:true}, function(err, result) {});
 });
  
+
 };
 
 
